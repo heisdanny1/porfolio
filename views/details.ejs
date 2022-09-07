@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/details.css">
+</head>
+<body>
+    <!-- ================================================================================== -->
+    <section class="title container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Admin Private Message.</h1>
+            <br>
+            <a href="/logout" class="logout" style="outline: none; color: black; text-decoration: none;">Logout</a>
+            <br>
+            <div class="seperator"></div>
+            <p>Every message from this route is from the vistor of the website.</p>
+          </div>
+        </div>
+        <br>
+        <h3 style="color: red;"><strong><i><%= msg%> </i></strong></h3>
+        <br>
+      </section>
+      <% if (items.length) { %>
+        <% for (let i=0; i<items.length; i++) { %>
+      <!-- Start Blog Layout -->
+      <div class="container" style="display:block;">
+        <div class="row">
+          <div class="col-md-6 item">
+            <div class="item-in">
+              <h2><strong>Visitor Name : </strong> <%= items[i].name %></h2>
+              <br>
+             <h4><strong>Visitor Name : </strong> <%= items[i].email %></h4>
+              <!-- <div class="seperator"></div> -->
+              <br>
+              <h3><strong><u><%= items[i].subject %></u></strong></h3>
+              <br>
+              <p><b><strong>Message</strong></b><i><%= items[i].message %></i></p>
+              <br>
+              <a href="/delete/<%= items[i]._id %>" class="delete" style="text-decoration: none;"><strong style=" color: red;font-size: large; outline: none; ">delete message.</strong></a>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+
+        <% } %> 
+    
+        <% }else{ %>
+            <center>
+    
+    <p>no message</p>
+    
+            </center>
+    
+            <% } %>
+</body>
+</html>
